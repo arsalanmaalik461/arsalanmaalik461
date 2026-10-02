@@ -1,21 +1,85 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#4C1D95"/>
-      <stop offset="0.55" stop-color="#6D28D9"/>
-      <stop offset="1" stop-color="#7C3AED"/>
+      <stop offset="0" stop-color="#1e1b4b">
+        <animate attributeName="stop-color" values="#1e1b4b;#4c1d95;#1e1b4b" dur="12s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="0.55" stop-color="#4c1d95">
+        <animate attributeName="stop-color" values="#4c1d95;#7c3aed;#4c1d95" dur="12s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="1" stop-color="#0f0a2e">
+        <animate attributeName="stop-color" values="#0f0a2e;#2e1065;#0f0a2e" dur="12s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fbbf24"/>
+      <stop offset="0.5" stop-color="#f59e0b"/>
+      <stop offset="1" stop-color="#fbbf24"/>
     </linearGradient>
     <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.14"/>
       <stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/>
     </linearGradient>
+    <radialGradient id="orb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fbbf24" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
+
   <rect width="1200" height="380" fill="url(#bg)"/>
-  <circle cx="1050" cy="60" r="180" fill="#ffffff" opacity="0.06"/>
-  <circle cx="120" cy="330" r="140" fill="#ffffff" opacity="0.05"/>
-  <circle cx="600" cy="190" r="240" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2"/>
+
+  <!-- floating orbs -->
+  <circle cx="1050" cy="70" r="170" fill="url(#orb1)">
+    <animate attributeName="cy" values="70;130;70" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="cx" values="1050;990;1050" dur="11s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="140" cy="320" r="150" fill="url(#orb1)">
+    <animate attributeName="cy" values="320;260;320" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="cx" values="140;200;140" dur="13s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="600" cy="190" r="120" fill="url(#orb2)">
+    <animate attributeName="cy" values="190;150;190" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="7s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- decorative rings -->
+  <circle cx="600" cy="190" r="250" fill="none" stroke="#ffffff" stroke-opacity="0.07" stroke-width="2"/>
+  <circle cx="600" cy="190" r="250" fill="none" stroke="#fbbf24" stroke-opacity="0.25" stroke-width="2"
+          stroke-dasharray="60 1180" stroke-linecap="round">
+    <animateTransform attributeName="transform" type="rotate" from="0 600 190" to="360 600 190" dur="24s" repeatCount="indefinite"/>
+  </circle>
+
   <rect width="1200" height="380" fill="url(#shine)"/>
-  <text x="600" y="150" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="56" font-weight="800" fill="#ffffff">Arslan Malik</text>
-<text x="600" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#E9D5FF">Full-Stack Developer · 1100+ Free Online Tools</text>
-<text x="600" y="330" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#C4B5FD">Developed by Arslan Malik  ·  arslanmalik.tech</text>
+
+  <!-- accent line -->
+  <rect x="500" y="98" width="200" height="4" rx="2" fill="url(#gold)">
+    <animate attributeName="width" values="200;260;200" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="x" values="500;470;500" dur="5s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- name with glow -->
+  <text x="600" y="168" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif"
+        font-size="64" font-weight="800" fill="#ffffff" filter="url(#glow)" letter-spacing="2">Arslan Malik
+    <animate attributeName="opacity" values="1;0.92;1" dur="4s" repeatCount="indefinite"/>
+  </text>
+  <text x="600" y="228" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif"
+        font-size="27" fill="#e9d5ff" letter-spacing="4">FULL-STACK DEVELOPER</text>
+  <text x="600" y="268" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif"
+        font-size="21" fill="#c4b5fd">Laravel · Flutter · JavaScript — Builder of Azlaan Tools</text>
+
+  <!-- bottom badges row -->
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="19" fill="#fde68a" text-anchor="middle">
+    <text x="600" y="330">✦  1100+ Free Online Tools  ✦  arslanmalik.tech  ✦</text>
+  </g>
+  <rect x="0" y="376" width="1200" height="4" fill="url(#gold)">
+    <animate attributeName="opacity" values="1;0.4;1" dur="3s" repeatCount="indefinite"/>
+  </rect>
 </svg>
