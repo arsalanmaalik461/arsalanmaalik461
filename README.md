@@ -22,7 +22,7 @@
 
 I'm a **Full-Stack Developer** from **Pakistan** 🇵🇰 with 60+ repositories spanning web platforms, mobile apps, and developer tooling. I specialize in taking products from idea to production: **Laravel backends**, **Flutter mobile apps**, and large-scale content platforms.
 
-My flagship project is **[Azlaan Tools](https://arslanmalik.tech)** — a free tools hub with **1100+ online utilities** (bill checkers, solar estimators, PDF/image/text tools, calculators, video downloaders), serving thousands of visitors with zero signup and near-zero hosting cost since almost every tool runs 100% client-side.
+My flagship project is **[Azlaan Tools](https://arslanmalik.tech)** — a free tools hub with **1100+ online utilities** (bill checkers, solar estimators, PDF/image/text tools, calculators, video downloaders), with zero signup — almost every tool runs 100% client-side, so it stays fast and free forever.
 
 - 🔭 Currently building: **[Azlaan Tools](https://arslanmalik.tech)** — new tools added regularly
 - 💼 Open to freelance & collaboration — especially Laravel / Flutter projects
